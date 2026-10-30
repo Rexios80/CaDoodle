@@ -119,6 +119,11 @@ public class JvmManager {
 			} else {
 				System.out.println("Not extracting, VM exists " + dest.getAbsolutePath());
 			}
+			try {
+				CompromisedRoots.removeFromJvm(dest);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
 			String cmd = bindir + name + "/bin/java" + (CadoodleUpdater.isWin() ? ".exe" : "") + " ";
 			// Mac OS set the dock icon
 			String iconPath = extractIconToTemp();

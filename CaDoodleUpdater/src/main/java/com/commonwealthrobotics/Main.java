@@ -27,6 +27,11 @@ public class Main  extends Application {
 		stage.show();
 	}
 	public static void main(String [] args) {
+		try {
+			CompromisedRoots.distrustInThisJvm();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 		CadoodleUpdater.argsFromSystem=args;
 		CadoodleUpdater.project="CommonWealthRobotics";
 		CadoodleUpdater.repoName=		"CaDoodle-Application";
